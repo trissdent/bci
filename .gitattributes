@@ -2,3 +2,5 @@
 *.txt annex.largefiles=nothing
 * annex.backend=MD5E
 **/.git* annex.largefiles=nothing
+*.md annex.largefiles=nothing
+*.txt annex.largefiles=nothing
