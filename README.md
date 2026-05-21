@@ -53,7 +53,7 @@ curl https://rclone.org/install.sh | sudo bash
 
 Then configure Google Drive access (all platforms):
 ```bash
-rclone config create gdrive drive scope drive
+rclone config create gdrive drive scope drive shared_with_me true
 rclone config reconnect gdrive:
 ```
 When prompted, press **Enter** twice to accept the defaults. Your browser will open — sign in with the Google account that has access to the shared Drive folder and click **Allow**. Then type **n** for Shared Drive and press **Enter**.
