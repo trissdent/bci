@@ -4,7 +4,9 @@ BCI data from Brain Health Lab.
 
 ## How to Download
 
-### Step 1: Install DataLad and git-annex
+### Initial Setup (one time only)
+
+#### 1. Install DataLad and git-annex
 
 **Linux:**
 ```bash
@@ -27,7 +29,7 @@ echo 'export PATH="/Applications/git-annex.app/Contents/MacOS:$PATH"' >> ~/.zshr
 source ~/.zshrc
 ```
 
-### Step 2: Install and configure rclone
+#### 2. Install and configure rclone
 
 **Linux:**
 ```bash
@@ -54,8 +56,7 @@ Then configure Google Drive access (all platforms):
 rclone config create gdrive drive scope drive
 rclone config reconnect gdrive:
 ```
-When prompted, press **Enter** twice to accept the defaults.
-Your browser will open — sign in with the Google account that has access to the shared Drive folder and click **Allow**. Then type **n** for Shared Drive and press **Enter**.
+When prompted, press **Enter** twice to accept the defaults. Your browser will open — sign in with the Google account that has access to the shared Drive folder and click **Allow**. Then type **n** for Shared Drive and press **Enter**.
 
 To verify it worked:
 ```bash
@@ -63,12 +64,19 @@ rclone lsd gdrive:
 ```
 You should see your Google Drive folders listed.
 
-### Step 3: Clone and download
+---
+
+### Get the Data
+
+After the initial setup, this is all you need:
+
 ```bash
 datalad clone https://github.com/trissdent/bci
 cd bci
+git annex enableremote gdrive
 datalad get .
 ```
 
 ## Access
+
 You need a Google account with access to the shared Drive folder. Contact the lab for access.
