@@ -74,7 +74,7 @@ After the initial setup, this is all you need:
 datalad clone https://github.com/trissdent/bci
 cd bci
 git annex enableremote gdrive
-datalad get .
+datalad get -J 4 .
 ```
 
 ## Access
